@@ -1,0 +1,6 @@
+[submodule "aztec/submodules/aztec_code_generator"]
+	path = aztec/submodules/aztec_code_generator
+	url = https://github.com/delimitry/aztec_code_generator.git
+[submodule "aztec/aztec_code_generator"]
+	path = aztec/aztec_code_generator
+	url = https://github.com/delimitry/aztec_code_generator.git
