@@ -1,30 +1,41 @@
 from sys import argv
 from os import path
-from aztec_code_generator import AztecCode
+from aztec_code_generator.aztec_code_generator import AztecCode
 
 helptext='''
 The script makes Aztec Code PNG picture out of a string that is passed as a parameter.
 
 Possible options:
--h or --help to view this message
--p or --paste to make the code from a clipboard
+-h to view this message
+-p to make the code from a clipboard
 '''
 
-moduledir = path.dirname(path.abspath(__file__))
+log = 1
 
-# first argument is the current file, so...
+moduledir = path.dirname(path.abspath(__file__))
+imgdir = moduledir+'\\aztec_code.png'
+if log > 0:
+    print("image dir = " + imgdir)
+
+# first argument is the current helpfile, so...
 
 # Selecting second argument to be converted as out data
 # I know that it could be skipped and argc[0] should be passed
 #   directly, but I like the word "data".
-#if arg == "-h" or "--help" or "":
-#    print(helptext)
-#    exit()
-# if argv[1] == "-p" or "--paste":
-    # # ready do do something dirty?
-    # from tkinter import Tk #yes, in the middle of the file!
-    # data = Tk().clipboard_get()
-# else:
-data = argv[1]
+if log > 0:
+    print ("argv[1] = " + argv[1])
+if len(argv) <= 1:
+    print("ERROR: no argument!")
+    print(helptext)
+    exit()
+elif argv[1] == "-h":
+    print(helptext)
+    exit()
+elif argv[1] == "-p":
+    # ready do do something dirty?
+    from tkinter import Tk #yes, in the middle of the file!
+    data = Tk().clipboard_get()
+else:
+    data = argv[1]
 aztec_code = AztecCode(data)
-aztec_code.save(moduledir+'\\aztec_code.png', module_size=4)
+aztec_code.save(imgdir, module_size=4)
