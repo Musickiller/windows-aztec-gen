@@ -1,0 +1,6 @@
+.
+Simple (un)installer script.
+.
+To uninstall the app, just run with option -u.
+.
+.
