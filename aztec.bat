@@ -11,7 +11,7 @@ set img=%dir%aztec\%imgname%
 
 IF EXIST %img% (
 	ECHO Deleting old picture...
-	DEL %dir%%img%
+	DEL %img%
 	)
 
 ECHO Loading python script...
