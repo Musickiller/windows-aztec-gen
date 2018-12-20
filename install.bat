@@ -66,9 +66,14 @@ EXIT /B 0
 :: && take action on success
 :: || take action on failure
 :: but del is a success even if files are not found
+@echo on
 DEL %dir%aztec.bat
 DEL %dir%aztec\main.py
 DEL %dir%aztec\aztec_code_generator\aztec_code_generator.py
+RMDIR %dir%aztec\aztec_code_generator
+RMDIR %dir%aztec
+RMDIR %dir%
+@echo off
 :: so I just let user know stuff this way
 echo Should have deleted all files. Look at errors if there are any.
 EXIT /B 0
