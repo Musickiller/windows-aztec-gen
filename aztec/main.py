@@ -34,7 +34,7 @@ elif argv[1] == "-h":
 elif argv[1] == "-p":
     # ready do do something dirty?
     from tkinter import Tk #yes, in the middle of the file!
-    data = Tk().clipboard_get()
+    data = str(Tk().clipboard_get())
 else:
     data = argv[1]
 aztec_code = AztecCode(data)
