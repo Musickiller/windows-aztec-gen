@@ -10,7 +10,7 @@ Possible options:
 -p to make the code from a clipboard
 '''
 
-log = 1
+log = 0
 
 moduledir = path.dirname(path.abspath(__file__))
 imgdir = moduledir+'\\aztec_code.png'
