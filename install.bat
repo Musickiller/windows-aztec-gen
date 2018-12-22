@@ -7,7 +7,9 @@ set helpfile=usage.txt
 
 if %log% GEQ 3 echo settings set
 
-set dir=%homedrive%%homepath%\apps\
+:: set dir=%homedrive%%homepath%\apps\
+:: there is a better way:
+set dir=%userprofile%\apps\
 set installator_dir=%~dp0
 
 if %log% GEQ 2 echo dirs set
