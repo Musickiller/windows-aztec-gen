@@ -41,7 +41,8 @@ set /p dir="(default location is C:%homepath%\apps\, hit Enter to use it): "
 EXIT /B 0
 
 :Help
-FOR /F "tokens=*" %%i IN (%helpfile%) DO @echo %%i
+type %helpfile%
+:: cat-like thing for winfows.
 EXIT /B 0
 
 :Install
